@@ -5,10 +5,6 @@
     <groupId>com.example</groupId>
     <artifactId>myproject</artifactId>
     <version>0.0.1-SNAPSHOT</version>
-    <properties>
-        <maven.compiler.target>1.8</maven.compiler.target>
-        <maven.compiler.source>1.8</maven.compiler.source>
-    </properties>
     <parent>
         <groupId>org.springframework.boot</groupId>
         <artifactId>spring-boot-starter-parent</artifactId>
@@ -18,11 +14,6 @@
         <dependency>
             <groupId>org.springframework.boot</groupId>
             <artifactId>spring-boot-starter-web</artifactId>
-        </dependency>
-        <dependency>
-            <groupId>org.apache.maven.plugins</groupId>
-            <artifactId>maven-compiler-plugin</artifactId>
-            <version>3.1</version>
         </dependency>
     </dependencies>
     <!-- Additional lines to be added here... -->
@@ -50,24 +41,4 @@
             <url>http://repo.spring.io/milestone</url>
         </pluginRepository>
     </pluginRepositories>
-    <build>
-        <plugins>
-            <plugin>
-                <groupId>org.springframework.boot</groupId>
-                <artifactId>spring-boot-maven-plugin</artifactId>
-            </plugin>
-            <!--start-->
-            <plugin>
-                <artifactId>maven-compiler-plugin</artifactId>
-                <version>3.1</version>
-                <configuration>
-                    <fork>true</fork>
-                    <executable>
-                        C:\Program Files\Java\jdk1.8.0_191
-                    </executable>
-                </configuration>
-            </plugin>
-            <!--end-->
-        </plugins>
-    </build>
 </project>
