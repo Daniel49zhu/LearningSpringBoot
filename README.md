@@ -71,5 +71,47 @@ compile("org.springframework.boot:spring-boot-starter-web")
 testCompile("org.springframework.boot:spring-boot-starter-test")
 }
 ```
+------
+* SpringApplication类
+   
+   
+    SpringApplication类提供了一种从main()方法启动Spring应用的便捷方式。在很多情况下，你只需委托给
+    SpringApplication.run这个静态方法：
+````
+public static void main(String[] args){
+    SpringApplication.run(MySpringConfiguration.class, args);
+}
+````
+如果默认的SpringApplication不符合你的口味，你可以创建一个本地的实例并自定义它。例如，关闭banner你可以这样写：
+````
+public static void main(String[] args){
+    SpringApplication app = new SpringApplication(MySpringConfiguration.class);
+    app.setShowBanner(false);
+    app.run(args);
+}
+````
+如果你需要创建一个分层的ApplicationContext（多个具有父子关系的上下文），或你只是喜欢使用流畅的构建API，你可以
+使用SpringApplicationBuilder。
+```
+new SpringApplicationBuilder()
+    .showBanner(false)
+    .sources(Parent.class)
+    .child(Application.class)
+    .run(args);
+```
+
+* Application事件和监听器
+
+你可以使用多种方式注册事件监听器，最普通的是使用SpringApplication.addListeners(…)方法。在你的应用运行时，应用事
+件会以下面的次序发送：
+1. 在运行开始，但除了监听器注册和初始化以外的任何处理之前，会发送一个ApplicationStartedEvent。
+2. 在Environment将被用于已知的上下文，但在上下文被创建前，会发送一个ApplicationEnvironmentPreparedEvent。
+3. 在refresh开始前，但在bean定义已被加载后，会发送一个ApplicationPreparedEvent。
+4. 启动过程中如果出现异常，会发送一个ApplicationFailedEvent。
+
+
+
+
+    
 
 
