@@ -10,7 +10,7 @@ demo [app.groovy](src/main/java/app.groovy "app.groovy")，运行`spring run app
 #### 构建系统
 -----
 MAVEN
-   1. 配置你的项目继承` spring-boot-starter-parent`
+   *  配置你的项目继承` spring-boot-starter-parent`
     ```
     <!-- Inherit defaults from Spring Boot -->
     <parent>
@@ -19,7 +19,7 @@ MAVEN
     <version>1.3.0.BUILD-SNAPSHOT</version>
     </parent>
     ```
-    2.导入依赖 如果你不使用 spring-boot-starter-parent  ，通过使用一个 scope=import  的依赖
+   * 导入依赖 如果你不使用 spring-boot-starter-parent  ，通过使用一个 scope=import  的依赖
     ```
     <dependencyManagement>
     <dependencies>
@@ -34,7 +34,7 @@ MAVEN
     </dependencies>
     </dependencyManagement>
     ```
-    3.如果要将项目打包成可执行jar，需要引入
+   * 如果要将项目打包成可执行jar，需要引入
     ```
     <build>
     <plugins>
@@ -45,4 +45,7 @@ MAVEN
     </plugins>
     </build>
     ```
+    
+GRADLE
+
 
