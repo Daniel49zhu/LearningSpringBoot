@@ -10,7 +10,7 @@ demo [app.groovy](src/main/java/app.groovy "app.groovy")，运行`spring run app
 #### 构建系统
 -----
 MAVEN
-   *  配置你的项目继承` spring-boot-starter-parent`
+   *  配置你的项目继承 spring-boot-starter-parent
     ```
     <!-- Inherit defaults from Spring Boot -->
     <parent>
@@ -47,5 +47,29 @@ MAVEN
     ```
     
 GRADLE
+ * Gradle用户可以直接在它们的 dependencies  节点处导入”starter POMs“
+ `````
+apply plugin: 'java'
+repositories { jcenter() }
+dependencies {
+compile("org.springframework.boot:spring-boot-starter-web:1.3.0.BUILD-SNAPSHOT")
+}
+`````
+* spring-boot-gradle-plugin插件也是可以使用的，它提供创建可执行jar和从source运行项目的任务
+```
+buildscript {
+repositories { jcenter() }
+dependencies {
+classpath("org.springframework.boot:spring-boot-gradle-plugin:1.3.0.BUILD-SNAPSHOT")
+}
+}
+apply plugin: 'java'
+apply plugin: 'spring-boot'
+repositories { jcenter() }
+dependencies {
+compile("org.springframework.boot:spring-boot-starter-web")
+testCompile("org.springframework.boot:spring-boot-starter-test")
+}
+```
 
 
