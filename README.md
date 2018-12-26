@@ -34,4 +34,15 @@ MAVEN
     </dependencies>
     </dependencyManagement>
     ```
+    3.如果要将项目打包成可执行jar，需要引入
+    ```
+    <build>
+    <plugins>
+    <plugin>
+    <groupId>org.springframework.boot</groupId>
+    <artifactId>spring-boot-maven-plugin</artifactId>
+    </plugin>
+    </plugins>
+    </build>
+    ```
 
