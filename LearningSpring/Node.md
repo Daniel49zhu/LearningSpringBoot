@@ -34,6 +34,7 @@
 
 
   - 示例3 AOP
+  
     Spring AOP的存在目的是为了解耦
     Spring支持AspectJ的注解式切面编程
     
@@ -62,7 +63,23 @@
     (6)通过@Before声明一个建言，此建言直接使用拦截规则作为参数
     
     [AopConfig](src/main/java/example3/AopConfig.java) 使用@EnableAspectJAutoProxy开启堆AspectJ代理的支持
-
+    
+    
+ -----
+ ##### Spring常用配置
+ @org.springframework.context.annotation.Scope  
+ 用来描述Spring如何创建Bean的实例，
+  (1)Singleton 一个容器中只有一个实例，(2)Prototype 每次调用创建一个实例，(3)Request 给每一个Request创建一个实例 ，(4)Session 给每一个Session创建一个实例
+  - 示例4
+  
+  [DemoSingletonService](src/main/java/example4/DemoSingletonService.java)
+    无需添加注解，默认为单例的
+    
+  [DemoPrototypeService](src/main/java/example4/DemoPrototypeService.java)
+  @Scope("prototype")，每次通过容器获取时都会创建一次
+  
+  [Main](src/main/java/example4/Main.java) 启动方法
+  
 
 
 
