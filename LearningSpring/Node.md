@@ -53,6 +53,22 @@ Spring支持AspectJ的注解式切面编程
 
 Spring在处理@Transcational和@Cacheable都使用了此种形式的拦截
 
+[Action](src/main/java/example3/Action.java) 定义拦截规则的注解
+
+[DemoAnnotationService](src/main/java/example3/DemoAnnotationService.java)编写使用注解的被拦截类
+
+[DemoMethodService](src/main/java/example3/DemoMethodService.java)编写使用方法规则被拦截类
+
+[LogAspect](src/main/java/example3/LogAspect.java)编写切面
+(1)通过@Aspect注解声明切面
+(2)通过@Component让此切面由Spring容器管理
+(3)通过@PointCut声明切点
+(4)通过@After声明一个建言，并使用@PointCut定义的切点
+(5)通过反射获得注解上的属性，然后做日志记录相关的操作
+(6)通过@Before声明一个建言，此建言直接使用拦截规则作为参数
+
+[AopConfig](src/main/java/example3/AopConfig.java) 使用@EnableAspectJAutoProxy开启堆AspectJ代理的支持
+
 
 
 
