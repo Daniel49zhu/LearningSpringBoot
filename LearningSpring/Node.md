@@ -80,6 +80,10 @@
   
   [Main](src/main/java/example4/Main.java) 启动方法
   
+- 示例5
+
+    Spring内置了EL-spring表达式，主要在@Value注解中使用该表达式，示例5主要实现以下几种情况
+  
 
 
 
