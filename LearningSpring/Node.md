@@ -10,19 +10,19 @@
     //注入Bean的注解： @AutoWired  //Spring提供，@Inject     //JSR-330提供，@Resource   //JSR-250提供
 
 
-   - 示例1
+- 示例1
 
-        [FunctionService](src/main/java/example1/FunctionService.java),@Service说明这个Bean交由Spring的容器管理
-        
-        [UseFunciotnService](src/main/java/example1/UseFunciotnService.java),@Service说明这个Bean交由Spring的容器管理,@Autowired
-        将FunctionService的实体Bean注入到UseFunctionService中
-        
-        [Config](src/main/java/example1/Config.java),@Configuration声明当前类是一个配置类，@ComponentScan会自动扫描指定包下所有有
-        @Service,@Component,@Repository,@Controller的类，并注册到容器中
-        
-        [Main](src/main/java/example1/Main.java),使用AnnotationConfigApplicationContext作为具体的容器类，并能接受一个配置类
-        
-        java配置是spring4.x推荐的方式，也是Spring Boot推荐的配置方式
+    [FunctionService](src/main/java/example1/FunctionService.java),@Service说明这个Bean交由Spring的容器管理
+    
+    [UseFunciotnService](src/main/java/example1/UseFunciotnService.java),@Service说明这个Bean交由Spring的容器管理,@Autowired
+    将FunctionService的实体Bean注入到UseFunctionService中
+    
+    [Config](src/main/java/example1/Config.java),@Configuration声明当前类是一个配置类，@ComponentScan会自动扫描指定包下所有有
+    @Service,@Component,@Repository,@Controller的类，并注册到容器中
+    
+    [Main](src/main/java/example1/Main.java),使用AnnotationConfigApplicationContext作为具体的容器类，并能接受一个配置类
+    
+    java配置是spring4.x推荐的方式，也是Spring Boot推荐的配置方式
 
  - 示例2
 
