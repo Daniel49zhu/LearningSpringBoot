@@ -16,7 +16,7 @@
     @Inject     //JSR-330提供
     @Resource   //JSR-250提供
 ```
-示例
+示例1
 
 [FunctionService](src/main/java/example1/FunctionService.java),@Service说明这个Bean交由Spring的容器管理
 
@@ -27,5 +27,18 @@
 @Service,@Component,@Repository,@Controller的类，并注册到容器中
 
 [Main](src/main/java/example1/Main.java),使用AnnotationConfigApplicationContext作为具体的容器类，并能接受一个配置类
+
+java配置是spring4.x推荐的方式，也是Spring Boot推荐的配置方式
+
+示例2
+
+[FunctionService](src/main/java/example2/FunctionService.java)，无任何注解
+
+[UseFunciotnService](src/main/java/example2/UseFunctionService.java)，无任何注解
+
+[Config](src/main/java/example2/JavaConfig.java)
+
+
+
 
     
