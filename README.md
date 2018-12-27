@@ -110,6 +110,10 @@ new SpringApplicationBuilder()
 4. 启动过程中如果出现异常，会发送一个ApplicationFailedEvent。
 
 
+JavaEE颠覆者 SpringBoot实战学习笔记
+- [第一章 Spring](LearningSpring/Node.md)
+
+
 
 
     
