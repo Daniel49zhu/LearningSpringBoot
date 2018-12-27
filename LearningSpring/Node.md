@@ -39,6 +39,21 @@ java配置是spring4.x推荐的方式，也是Spring Boot推荐的配置方式
 [Config](src/main/java/example2/JavaConfig.java)
 
 
+示例3 AOP
+Spring AOP的存在目的是为了解耦
+Spring支持AspectJ的注解式切面编程
+
+(1) 使用@Aspect声明一个切面
+
+(2)使用@After @Before @Around定义建言（advice）
+
+(3) 其中@After @Before @Around参数的拦截规则为切点（PointCut）
+
+(4) 其中符合条件的每一个被拦截处为连接点（JoinPoint）
+
+Spring在处理@Transcational和@Cacheable都使用了此种形式的拦截
+
+
 
 
     
