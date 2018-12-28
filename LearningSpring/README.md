@@ -129,6 +129,10 @@
     
     [DemoPublisher](src/main/java/example8/DemoPublisher.java)注入ApplicationContext用来发布事件，使用publishEvent方法来发布
     
+- 示例9
+    Spring Aware目的是维克让Bean能获取到管理它的Spring容器的服务，ApplicationContext接口继承了MessageSource，ApplicationEventPublisher和ResourceLoader接口，
+    所以Bean继承了ApplicationContextAware可以获得Spring容器的所有服务。
+    
   
 
 
