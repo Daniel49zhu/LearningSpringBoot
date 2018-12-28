@@ -167,6 +167,13 @@
     [ConditionConfig](src/main/java/example12/ConditionConfig.java) 通过@Contional注解，符合WindowsCondition就实例化windowListService，
     符合LinuxCondition就实例化LinuxListService
     
+- 示例13
+    
+    通过组合注解来实现自定义的注解
+    
+    [ChangConfiguration](src/main/java/example13/ChangConfiguration.java) 将之前常用的@Configuration和@ComponentScan两个注解合并形成一个组合注解
+    
+    
     
     
     
