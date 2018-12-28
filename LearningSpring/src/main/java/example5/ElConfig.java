@@ -29,9 +29,15 @@ public class ElConfig {
     @Value("#{systemProperties['os.name']}")
     private String osName;
 
+    /**
+     * 注入表达式
+     */
     @Value("#{T(java.lang.Math).random() * 100.0 }")
     private double randomNumber;
 
+    /**
+     * 注入其他Bean的属性
+     */
     @Value("#{demoService.another}")
     private String fromAnother;
 
