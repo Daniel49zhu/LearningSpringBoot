@@ -72,18 +72,33 @@
   (1)Singleton 一个容器中只有一个实例，(2)Prototype 每次调用创建一个实例，(3)Request 给每一个Request创建一个实例 ，(4)Session 给每一个Session创建一个实例
   - 示例4
   
-  [DemoSingletonService](src/main/java/example4/DemoSingletonService.java)
-    无需添加注解，默认为单例的
-    
-  [DemoPrototypeService](src/main/java/example4/DemoPrototypeService.java)
-  @Scope("prototype")，每次通过容器获取时都会创建一次
-  
-  [Main](src/main/java/example4/Main.java) 启动方法
+      [DemoSingletonService](src/main/java/example4/DemoSingletonService.java)
+        无需添加注解，默认为单例的
+        
+      [DemoPrototypeService](src/main/java/example4/DemoPrototypeService.java)
+      @Scope("prototype")，每次通过容器获取时都会创建一次
+      
+      [Main](src/main/java/example4/Main.java) 启动方法
   
 - 示例5
 
     Spring内置了EL-spring表达式，主要在@Value注解中使用该表达式，示例5主要实现以下几种情况
     (1)注入普通字符，(2)注入操作系统属性，(3)注入表达式运算结果，(4)注入其他Bean的属性，(5)注入文件内容，(6)注入网址内容，(7)注入属性文件
+    
+    [ElConfig](src/main/java/example5/ElConfig.java) 具体见类内注释
+    
+- 示例6
+    Spring支持在Bean创建之前和之后做一些必要的操作，一是使用@Bean的initMethod和destroyMethod方法，
+    而是利用JSR-250提供的@PostConstruct和@PreDestory
+    
+    [BeanWayService](src/main/java/example6/BeanWayService.java)
+    
+    [Jsr250WayService](src/main/java/example6/Jsr250WayService.java)
+    @PostConstruct会在构造方法执行之后执行，@PreDestroy是在Bean销毁之前创建
+    
+    [PrepostConfig](src/main/java/example6/PrepostConfig.java)
+    initMethod会在构造方法执行之后执行，destroyMethod是在Bean销毁之前创建
+    
   
 
 
