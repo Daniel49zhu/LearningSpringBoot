@@ -162,7 +162,13 @@
     @Conditional根据满足某一个特定条件创建一个特定的Bean。比方说，当某一个jar包在一个类路径下的时候，自动配置一个或多个
     Bean；或者只有某个Bean被创建才会创建另外一个Bean。总的来说就是根据特定条件来控制Bean的创建行为。
     
-    在Spirng Boot中大量使用到条件注解
+    在Spring Boot中大量使用到条件注解
+    
+    [ConditionConfig](src/main/java/example12/ConditionConfig.java) 通过@Contional注解，符合WindowsCondition就实例化windowListService，
+    符合LinuxCondition就实例化LinuxListService
+    
+    
+    
     
     
   
