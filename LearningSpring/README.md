@@ -135,6 +135,17 @@
     
     [AwareService](src/main/java/example9/AwareService.java)实现BeanNameAware和ResourceLoaderAware，获得Bean名称和资源的加载服务
     
+    
+- 示例10
+
+    Spring通过任务执行器（TaskExecutor）来实现多线程和并发编程。使用Thread'PoolTaskExecutor可实现一个基于线程池的TaskExecutor。通过@EnableAsync开启对异步任务
+    的支持，并通过在实际执行的Bean
+    
+    [TaskExecutorConfig](src/main/java/example10/TaskExecutorConfig.java) @EnableAsync开启了异步任务的支持，通过getASyncExecutor来获得一个基于线程池的TaskExecutor
+    
+    [AsyncTaskService](src/main/java/example10/AsyncTaskService.java)  @Async加在方法上代表异步方法，加在类上代表类中所有方法都支持异步
+    
+    
   
 
 
