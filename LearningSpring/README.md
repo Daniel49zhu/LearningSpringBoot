@@ -113,6 +113,22 @@
     
     @Profile为dev实例化devDemoBean，为prod实例化prodDemoBean
     
+- 示例8
+    Spring的事件（Application Event）为Bean与Bean之间的消息通信提供了支持，当一个Bean处理完一个任务之后，
+    希望另一个Bean知道并做出相应处理，就需要另外一个Bean来监听当前Bean发出的事件。流程如下
+    
+    (1) 自定义事件，继承ApplicationEvent
+    
+    (2)定义事件监听器，实现ApplicationListener
+    
+    (3)使用容器发布事件
+    
+    [DemoEvent](src/main/java/example8/DemoEvent.java)自定义事件
+    
+    [DemoListener](src/main/java/example8/DemoListener.java)自定义监听器，通过实现onApplicationEvent方法对消息进行处理
+    
+    [DemoPublisher](src/main/java/example8/DemoPublisher.java)注入ApplicationContext用来发布事件，使用publishEvent方法来发布
+    
   
 
 
