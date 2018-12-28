@@ -17,7 +17,7 @@ import org.springframework.context.annotation.Configuration;
 @Configuration
 // 组合@ComponentScan元注解。
 @ComponentScan
-public @interface ChangConfiguration {
+public @interface MyConfiguration {
 
     // 覆盖value参数。
     String[] value() default {};
