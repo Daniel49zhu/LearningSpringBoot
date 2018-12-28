@@ -146,6 +146,16 @@
     [AsyncTaskService](src/main/java/example10/AsyncTaskService.java)  @Async加在方法上代表异步方法，加在类上代表类中所有方法都支持异步
     
     
+- 示例11
+
+    Spring对定时任务的支持
+    
+    [SchedulerTaskService](src/main/java/example11/SchedulerTaskService.java)通过@Scheduled声明该方法是定时任务，使用fixedRate属性每隔固定时间执行
+    使用cron属性可按照指定时间执行
+    
+    [TaskSchedulerConfig](src/main/java/example11/TaskSchedulerConfig.java)通过@EnableScheduling注解开启对计划任务的支持
+    
+    
   
 
 
