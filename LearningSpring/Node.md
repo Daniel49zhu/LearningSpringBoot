@@ -99,6 +99,20 @@
     [PrepostConfig](src/main/java/example6/PrepostConfig.java)
     initMethod会在构造方法执行之后执行，destroyMethod是在Bean销毁之前创建
     
+ - 示例7
+ 
+    Profile为不同环境下使用不同配置提供支持（例如开发环境和生产环境中的数据库配置）
+    
+    (1)通过设定Environment的ActivrProfiles来设定当前context需要使用的配置环境。
+    
+    (2)通过设定jvm的spring.profiles.active参数来设置配置环境
+    
+    (3)Web项目设置在Servlet的context parameter
+    
+    [ProfileConfig](src/main/java/example7/ProfileConfig.java)
+    
+    @Profile为dev实例化devDemoBean，为prod实例化prodDemoBean
+    
   
 
 
