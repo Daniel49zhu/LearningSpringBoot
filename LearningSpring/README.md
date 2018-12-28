@@ -133,6 +133,8 @@
     Spring Aware目的是维克让Bean能获取到管理它的Spring容器的服务，ApplicationContext接口继承了MessageSource，ApplicationEventPublisher和ResourceLoader接口，
     所以Bean继承了ApplicationContextAware可以获得Spring容器的所有服务。
     
+    [AwareService](src/main/java/example9/AwareService.java)实现BeanNameAware和ResourceLoaderAware，获得Bean名称和资源的加载服务
+    
   
 
 
