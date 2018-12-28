@@ -156,6 +156,15 @@
     [TaskSchedulerConfig](src/main/java/example11/TaskSchedulerConfig.java)通过@EnableScheduling注解开启对计划任务的支持
     
     
+- 示例12
+    
+    示例7中我们通过Profile可以获得不同的Bean，Spring4提供了一个更通用的基于条件的Bean的创建，即使用@Conditional注解，
+    @Conditional根据满足某一个特定条件创建一个特定的Bean。比方说，当某一个jar包在一个类路径下的时候，自动配置一个或多个
+    Bean；或者只有某个Bean被创建才会创建另外一个Bean。总的来说就是根据特定条件来控制Bean的创建行为。
+    
+    在Spirng Boot中大量使用到条件注解
+    
+    
   
 
 
