@@ -172,7 +172,37 @@
     通过组合注解来实现自定义的注解
     
     [ChangConfiguration](src/main/java/example13/ChangConfiguration.java) 将之前常用的@Configuration和@ComponentScan两个注解合并形成一个组合注解
+
+
+
+-----
+Enable* 注解的小结    
     
+@EnableAspectJAutoProxy开启对AspectJ代理的支持，
+
+@EnableAsync开启对异步任务的支持，
+
+@EnableScheduling开启对定时任务的支持，
+
+@EnableWebMvc开启对Web Mvc的支持，
+
+@EnableConfigurationProperties开启对@ConfigurationProperties的支持，
+
+@EnableJpaRepostiories开启对Spring Data JPA Repository的支持，
+
+@EnableTransactionMangement开启注解式事务支持，
+
+@EnableCaching开启注解式缓存支持   
+ 
+-----
+
+- 示例14
+
+[DemoBeanIntegrationTests](src/test/java/example14/DemoBeanIntegrationTests.java) 
+
+SpringJunit4ClassRunner 在Junit环境下提供Spring TestContext Framework的功能，@ContextConfiguration用来加载配置ApplicationContext，@ActiveProfiles用来声明活动的profile
+
+
     
     
     
