@@ -1,5 +1,6 @@
 package example1.web.controller;
 
+import example1.domain.DemoObj;
 import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.RequestMapping;
