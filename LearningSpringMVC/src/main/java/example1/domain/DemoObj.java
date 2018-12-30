@@ -7,7 +7,6 @@ public class DemoObj {
     private String name;
 
     public DemoObj() {
-        super();
     }
 
     public DemoObj(Integer id, String name) {
