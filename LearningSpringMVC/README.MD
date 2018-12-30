@@ -27,5 +27,8 @@
         (6) @RestController是一个组合注解，组合了@Controller和@ResponseBody
 
 - 示例2
+    [DemoObj](src/main/java/example1/domain/DemoObj.java)
+    
+    jackson对对象和json转换时需要一个空构造
     
     
