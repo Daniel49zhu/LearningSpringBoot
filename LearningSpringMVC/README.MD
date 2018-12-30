@@ -31,4 +31,26 @@
     
     jackson对对象和json转换时需要一个空构造
     
+    [DemoAnnoController](src/main/java/example1/web/controller/DemoAnnoController.java)
+    
+    produce可以设置返回的媒体类型和字符集，produces="application/json;charset=UTF-8"代表返回的是json对象
+    
+    [DemoRestController](src/main/java/example1/web/controller/DemoRestController.java)
+    
+    @RestController注解声明了一个控制器，其类中所有方法不需要加@ResponseBody注解
+    
+- 示例3
+
+    [DemoInterceptor](src/main/java/example1/web/interceptor/DemoInterceptor.java)
+    继承了HandlerInterceptorAdapter类来实现自定义的拦截器，重写preHandler放啊，在请求发生前执行，重写postHandle，在请求发生后执行
+    
+- 示例4
+
+    [ExceptionHandlerAdvice](src/main/java/example1/web/advice/ExceptionHandlerAdvice.java)
+    @ControllerAdvice声明一个控制器建言,@ControllerAdvice组合了@Component注解，所以自动注册为Spring的Bean。
+    @ExceptionHandler在此处为定义全局处理
+    
+    -- --后面的部分就没有看了-- --
+    
+    
     
