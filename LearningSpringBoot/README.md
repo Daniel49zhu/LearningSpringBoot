@@ -48,4 +48,13 @@ SpringApplication中调用showBanner方法
     - 简单示例
     
      将Tomcat的默认端口号8080修改为9090，并将默认访问路径"/"修改为"helloboot"。
+    [application.properties](src/main/resources/application.properties)
     
+- starter pom
+
+    Spring Boot提供了可以应付绝大多数开发场景的starter pom，只要使用相应的starter pom就可以换取提供的自动配置的Bean，
+    来减少手动配置
+    ![images/starter.jpg](src/main/resources/images/starter.jpg "starter pom")
+    除了Spring官方提供的，还有一些第三方的starter pom。
+    
+    Spring Boot倡导零配置，但是有时不得区使用xml配置，此时可以通过@ImportResource来加载xml的配置
