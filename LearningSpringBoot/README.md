@@ -58,3 +58,8 @@ SpringApplication中调用showBanner方法
     除了Spring官方提供的，还有一些第三方的starter pom。
     
     Spring Boot倡导零配置，但是有时不得区使用xml配置，此时可以通过@ImportResource来加载xml的配置
+    
+- 常规属性设置
+
+    在Spring中我们可以使用@Value来注入值，在Spring Boot里，我们只需要在application.properties定义属性，直接使用
+    @Value注入即可,
