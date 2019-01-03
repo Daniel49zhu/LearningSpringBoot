@@ -2,6 +2,7 @@ package com.zjc.TestDemo;
 
 import org.junit.Test;
 
+import java.text.SimpleDateFormat;
 import java.util.HashMap;
 import java.util.Map;
 import java.util.UUID;
@@ -13,8 +14,8 @@ public class TestDemo {
             this.put("ID", "d806ec2e3160451396f0cf934d9cea85");
             this.put("AJMC", "NULL");
             this.put("AFDD", "安徽省芜湖市镜湖区xx小区");
-            this.put("FASJKS", "2018-12-21 10:01:34");
-            this.put("FASJJS", "2018-12-31 03:23:32");
+            this.put("FASJKS", "2018-12-21");
+            this.put("FASJJS", "2018/12/31 03:23:32");
             this.put("XCKYH", "3aed4c601a144e3e94cfad8bb86bef87");
             this.put("SARY", "王阳，胡无数");
             this.put("LADW_ID", "1123");
@@ -30,6 +31,7 @@ public class TestDemo {
             this.put("JJH", "01c8e76c6c6e42d1b44cef772d6f4a7a");
         }};
         Gaaj gaaj = new Gaaj();
+        MyBeanUtil.addDatePattern("yyyy/MM/dd hh:mm:ss");
         MyBeanUtil.convert(gaaj,map);
         System.out.println(gaaj);
     }
@@ -43,4 +45,21 @@ public class TestDemo {
     public void generateDate() {
         System.out.println(System.currentTimeMillis());
     }
+
+    @Test
+    public void match() {
+        String[] patterns = {"yyyy-MM-dd","yyyy-MM-dd hh:mm:ss"};
+        String date = "2018-12-31 03:23:32";
+        for(String pattern :patterns) {
+            if(pattern.trim().length()==date.trim().length()) {
+                SimpleDateFormat dateFormat = new SimpleDateFormat(pattern);
+                try{
+                    dateFormat.parse(date);
+                } catch (Exception e) {
+                    continue;
+                }
+            }
+        }
+    }
+
 }
