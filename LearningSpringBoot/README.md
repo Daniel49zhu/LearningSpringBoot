@@ -63,3 +63,29 @@ SpringApplication中调用showBanner方法
 
     在Spring中我们可以使用@Value来注入值，在Spring Boot里，我们只需要在application.properties定义属性，直接使用
     @Value注入即可,
+    
+    另外我们可以利用[AuthorSettings](src/main/java/com/zjc/LearningSpringBoot/config/AuthorSettings.java)这种形式，来批量注入属性，
+    避免利用@Value一个一个注入
+    
+- 日志配置
+
+    Spring Boot支持Java Util Logging，Log4J，Log4J2和Logback作为日志框架，Spring Boot使用Logback作为日志框架。
+    
+    配置日志级别：
+    logging.file=D:/mylog/log.log
+    logging.level.org.springframework.web=DEBUG
+    
+- Profile配置
+
+    Profile是Spring用来针对不同的环境对不同的配置提供支持的，全局Profile配置使用application-{profile}.properties
+    （如application-prod.properties）。
+    通过在application.properties中设置spring.profiles.active=prod来指定活动的Profile。
+    - 举例
+    
+    [application.properties](src/main/resources/application.properties) 通过spring.profiles.active=dev来指定活动的配置
+    
+    [application-dev.properties](src/main/resources/application-dev.properties) server.port=8888
+    
+    [application-prod.properties](src/main/resources/application-prod.properties) server.port=80
+    
+
