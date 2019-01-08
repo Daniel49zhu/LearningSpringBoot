@@ -43,7 +43,7 @@ public class WsController {
     @MessageMapping("/chat")
     public void handleChat(Principal principal, String msg){
         System.out.println("name: "+principal.getName()+" ,message: "+ msg);
-        // 这里是一段硬编码，如果发送人是 wyf，则发送给 wisely；如果发送人是 wisely，则发送给 wyf，
+        // 这里是一段硬编码，如果发送人是 zjc，则发送给 wisely；如果发送人是 wisely，则发送给 zjc，
         // 可以根据项目实际需要改写此处代码。
         if (TEST_USER_NAME.equals(principal.getName())){
             // 通过 messagingTemplate.convertAndSendToUser 向用户发送消息，
@@ -51,7 +51,7 @@ public class WsController {
             messagingTemplate.convertAndSendToUser("wisely","/queue/notifications",
                     principal.getName()+"-send:"+msg);
         } else {
-            messagingTemplate.convertAndSendToUser("wyf","/queue/notifications",
+            messagingTemplate.convertAndSendToUser("zjc","/queue/notifications",
                     principal.getName()+"-send:"+msg);
         }
     }
