@@ -10,5 +10,6 @@
 
     <modules>
         <module>thymeleaf</module>
+        <module>websocket</module>
     </modules>
 </project>
