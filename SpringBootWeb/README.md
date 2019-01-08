@@ -92,3 +92,7 @@
     页面上的数据获得通过消费后台的REST服务来实现，而不是通过服务器渲染的动态页面(如JSP这类模板)来实现，一般数据交换使用JSON
     
     本节针对Bootstrap和AngularJS进行快速入门式引导
+    
+    - Bootstrap 
+    是一个开发响应式和移动优先的HTML,CSS,JavaScript框架，实现了只使用一套代码就可以在不同设备显示你的视图。Bootstrap提供了
+    大量美观的HTML元素前端组件和jQuery插件。
