@@ -49,19 +49,15 @@
     当服务器端有消息时，会发送给所有当前建立连接的浏览器
     
     (1)配置WebSocket,需要在配置类上使用@EnableWebSocketMessageBroker开启WebSocket支持，并继承AbstractWebSocketMessageBorkerConfigure类，重写其他方法来配置
-    WebSocket。
-    [WebSocketConfig](websocket/src/main/java/com/zjc/websocket/config/WebSocketConfig.java)
+    WebSocket。[WebSocketConfig](websocket/src/main/java/com/zjc/websocket/config/WebSocketConfig.java)
     
-    (2)浏览器向服务端发送的消息用此类接受
-    
+    (2)浏览器向服务端发送的消息用此类接收 
     [WiselyMessage](websocket/src/main/java/com/zjc/websocket/domain/WiselyMessage.java)
     
-    (3) 服务器向浏览器发送的此类消息
-    
+    (3) 服务器向浏览器发送的此类消息 
     [WiselyResponse](websocket/src/main/java/com/zjc/websocket/domain/WiselyResponse.java)
     
     (4)演示控制器
-    
     [WsController](websocket/src/main/java/com/zjc/websocket/web/controller/WsController.java)
     
     (5) 添加脚本 将stomp.min.js（STOMP协议的客户端脚本）、sockjs.min.js(SockJS的客户端脚本)以及jQuery放置在
@@ -88,3 +84,11 @@
     (6) 聊天页面 [chat.html](websocket/src/main/resources/templates/chat.html)
     
     (7) 增加页面的viewController [WebMvcConfig](websocket/src/main/java/com/zjc/websocket/config/WebMvcConfig.java)
+    
+ 
+- 基于Bootstrap和AngularJS的现代Web应用
+
+    现代的B/S软件有下面几个特色 1.单页面应用(SPA) 2.响应式设计，能设计不同的设备和窗口大小 3.数据导向 
+    页面上的数据获得通过消费后台的REST服务来实现，而不是通过服务器渲染的动态页面(如JSP这类模板)来实现，一般数据交换使用JSON
+    
+    本节针对Bootstrap和AngularJS进行快速入门式引导
