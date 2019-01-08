@@ -94,5 +94,9 @@
     本节针对Bootstrap和AngularJS进行快速入门式引导
     
     - Bootstrap 
+    
     是一个开发响应式和移动优先的HTML,CSS,JavaScript框架，实现了只使用一套代码就可以在不同设备显示你的视图。Bootstrap提供了
     大量美观的HTML元素前端组件和jQuery插件。
+    
+    [bootstrap.html](angularjs/src/main/resources/static/bootstrap.html) Bootstrap提供了大量的页面组件，包括字体图标，
+    下拉框、导航条、进度条等。
