@@ -100,3 +100,25 @@
     
     [bootstrap.html](angularjs/src/main/resources/static/bootstrap.html) Bootstrap提供了大量的页面组件，包括字体图标，
     下拉框、导航条、进度条等。
+    
+    - AngularJS
+    
+    AngularJS官方定义:AngularJS是HTML开发本应该的样子，它是用来设计开发Web应用的。
+    
+    AngularJS使用声明式模板+数据绑定(类似JSP，Thymeleaf),MVW(Model-View-Whatever),MVVM(Model-View-ViewModel),
+    MVC(Model-View-Controller)，依赖注入和测试，但实现这一切只借助纯客户端的JavaScript。
+    
+    HTML一般是用来声明静态页面的，但是通常我们希望页面是基于数据动态生成的，这也是我们很多服务端模板引擎出现的原因；
+    而AngularJS可以只通过前端技术就实现动态的页面。
+    
+    [angularjs.html](angularjs/src/main/resources/static/angularjs.html)
+     
+     `ng-app`所作用的范围是AngularJS奇效的范围，本例是整个页面有效
+     `ng-model`定义整个AngularJS的前端数据模型，模型的名称是yourName，模型的值来自输入input的值
+     使用{{modelName}}来读取模型中的值。V就是页面上定义的元素，M就是我们用`ng-model`定义的数据，页面
+     使用`ng-controller`来和其关联。
+     
+     - 案例
+     
+     本节我们使用BootStrap制作导航，使用AngularJS实现导航切换页面的路由功能，并演示AngularJS通过$http服务和Spring Boot
+     提供的REST服务，最后演示用指令封装jQueryUI的日期选择器。
