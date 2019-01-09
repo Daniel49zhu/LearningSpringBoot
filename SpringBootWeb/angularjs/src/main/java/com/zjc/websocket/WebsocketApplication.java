@@ -7,6 +7,8 @@ import org.springframework.http.MediaType;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
 
+import java.util.Random;
+
 @RestController
 @SpringBootApplication
 public class WebsocketApplication {
@@ -14,7 +16,7 @@ public class WebsocketApplication {
 
 	@RequestMapping(value = "/search",produces = {MediaType.APPLICATION_JSON_VALUE})
 	public Person search(String personName){
-		return new Person(personName,21,"chongqing");
+		return new Person(personName,new Random().nextInt(20)+10,"wuhu");
 	}
 
 	public static void main(String[] args) {
