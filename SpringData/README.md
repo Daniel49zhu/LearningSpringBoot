@@ -50,7 +50,20 @@ CRUD(创建、获取、更新、删除)、查询、排序和分页的相关的�
     
 - Spring Data JPA
 
- JPA（Java Persitence API）是一个基于O/R映射的标准规范，规范即只定义标准规则，不提供实现，主要实现由
- Hibernate、EclipseLink和OpenJpa等。
- Spring Data JPA是Spring Data的一个子项目，通过提供基于JPA的Repository极大地减少了JPA作为数据
- 访问方案的代码量。
+     JPA（Java Persitence API）是一个基于O/R映射的标准规范，规范即只定义标准规则，不提供实现，主要实现由
+     Hibernate、EclipseLink和OpenJpa等。
+     Spring Data JPA是Spring Data的一个子项目，通过提供基于JPA的Repository极大地减少了JPA作为数据
+     访问方案的代码量。
+    
+    - 实例
+    
+    (1) 启动Oracle XE
+    `docker run -d -p 9090:8080 -p 1521:1521 daocloud.io/ihypo/oracle-xe-11g`
+    
+    管理访问界面:
+    ```
+    url:http://localhost:9090/apex
+    workspace:internal
+    username:admin
+    password:oracle
+    ```
