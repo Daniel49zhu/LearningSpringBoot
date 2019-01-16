@@ -72,3 +72,26 @@ CRUD(创建、获取、更新、删除)、查询、排序和分页的相关的�
     - 实例
     
     [DataRestStart](rest/src/main/java/com/zjc/DataRestStart.java)
+    
+- 声明式事务
+
+    所有的数据访问技术都有事务处理机制，这些技术提供了API用来开启事务、提交事务来完成数据操作，
+    或者在发生错误的时候回滚数据。
+    
+    而Spring的事务机制使用同意的机制来处理不同的数据访问技术的事务处理。Spring的事务机制提供了一个
+    PlatformTransactionManager接口，不同的数据访问技术的事务使用不同的接口实现，如图所示：
+   
+    ![数据访问技术](images/tech.jpg "数据访问技术")
+    
+    - 声明式事务
+    
+    Spring支持声明式事务，即使用注解来选择需要使用事务的方法，它使用@Transactional注解，在方法
+    表明该方法需要事务支持。这是一个基于AOP的实现操作。在注解的方法被调用时，会开启一个新的事务，如果出现了
+    异常在Spring会提交这个事务。
+    
+    注意@Transactional注解来自org.springframework,transaction.annotation而不是javax.transaction.
+    
+    Spring提供了一个@EnableTransactionManagement注解在配置类上来开启声明式事务的支持。
+    
+    ![Transactional属性](images/trans.jpg "Transactional属性")
+    
