@@ -67,3 +67,12 @@ CRUD(创建、获取、更新、删除)、查询、排序和分页的相关的�
     username:admin
     password:oracle
     ```
+    
+- Spring Data REST
+
+    Spring Data JPA是基于Spring Data的repository之上，可以将repository自动输出为REST资源。目前Spring Data REST
+    支持将Spring Data REST支持将Spring Data JPA、Spring Data MongoDB、Spring Data Neo4j、
+    Spring Data GemFire以及Spring Data Cassandra的repository自动转换成REST服务。
+    
+    Spring Data REST的配置是定义在RepositoryRestMvcConfiguration（org.springframework.data.rest.webmvc.config.RepositoryRestMvcConfiguration）配置类
+    中已经配置好了，我们可以通过继承此类或者直接在自己的配置类上@Import此配置类。
