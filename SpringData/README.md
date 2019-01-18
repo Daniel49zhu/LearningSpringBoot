@@ -99,3 +99,55 @@ CRUD(创建、获取、更新、删除)、查询、排序和分页的相关的�
     
     [DataTransactionStart](transaction/src/main/java/com/zjc/DataTransactionStart.java)
     
+- 数据缓存Cache
+
+    一个程序的平静在于数据库，我们也知道内存的速度是大大快于硬盘的速度。当我们需要重复地获取相同的数据的时候，
+    我们可以利用数据缓存来解决问题。
+    
+    Spring定义了org.springframework.cache.CacheManager和org.springframework.cache.Cache接口来
+    统一不同的缓存技术,其中,CacheManager是Spring提供的各种缓存技术抽象接口,Cache接口包含缓存的各种操作(增加、
+    删除、获得缓存,我们一般不直接和此接口打交道)。
+    
+    - Spring支持的CacheManager
+    
+    ![缓存技术](images/Cache.jpg "缓存技术")
+    
+    Spring使用四个注解来声明缓存规则，如图所示
+    
+   ![缓存注解支持](images/cacheanno.jpg "缓存注解支持")
+   
+   - 实战
+   
+   [DataCacheStart](cache/src/main/java/com/zjc/DataCacheStart.java)
+   
+   
+   ```
+   http://localhost:8080/able?id=1
+   browser:
+    {
+      "id" : 1,
+      "name" : "汪云飞",
+      "age" : 32,
+      "address" : "合肥"
+    }
+    console:为id、key为：1 数据做了缓存
+   ```
+   
+   再次访问上面的地址，控制台无sql打印也无输出语句说明利用了缓存
+   
+   - 切换缓存技术
+   
+   也可以利用EhCache和Guava作为缓存技术的方式，只需将相关的依赖加入pom.xml中，在类路径下
+   进行配置，Spring boot会自动进行扫描
+
+- 非关系型数据库NoSQL
+
+    NoSQL是对于不使用关系作为数据管理的数据库系统的统称。NoSQL的主要特点是不使用SQL作为查询语句，
+    数据存储也不是固定的表，字段。
+    
+    NoSQL数据库主要有文档存储型（MongoDB）、图形关系存储型（Neo4j）和键值对存储型（Redis）。
+    本节主要演示基于MongoDB和Redis的数据访问。
+    
+    - MongoDB
+    
+    MongoDB是一个基于文档(Document)的存储型数据库
