@@ -150,4 +150,21 @@ CRUD(创建、获取、更新、删除)、查询、排序和分页的相关的�
     
     - MongoDB
     
-    MongoDB是一个基于文档(Document)的存储型数据库
+    MongoDB是一个基于文档(Document)的存储型数据库，使用面向对象的思想，每一条数据记录都是文档的对象。
+    
+    Spring对MongoDB的支持主要是通过Spring Data MongoDB来实现的，Spring Data MongoDB为我们提供了
+    如下的功能
+    
+    （1）Object/Document映射注解支持
+    
+    Spring Data MongDB提供了类似Jpa的@Entity、@Id的注解
+    ![注解支持](images/mongodb.jpg "注解支持")
+    
+    （2）MongoTemplate
+    
+    像JdbcTemplate一样，Spring Data MongoDB也为我们提供了一个MongoTemplate，其为我们提供了数据访问的方法，
+    我们还需要为MongoClient以及MongoDbFactory来配置数据库连接的属性
+    
+    （3） Repository的支持
+    
+    类似Spring Data JSP，Spring Data MongoDB也提供了Repository的支持，使用方式和Spring Data JPA一样。
