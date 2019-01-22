@@ -168,3 +168,9 @@ CRUD(创建、获取、更新、删除)、查询、排序和分页的相关的�
     （3） Repository的支持
     
     类似Spring Data JSP，Spring Data MongoDB也提供了Repository的支持，使用方式和Spring Data JPA一样。
+    
+    - 实战
+    
+    [DataMongodbStart](mongodb/src/main/java/com/zjc/DataMongodbStart.java)
+    
+    先用`localhost:808/save`来保存数据，然后调用`localhost:8080\q1?name=zc`和`localhost:8080\q2=22`来测试查询功能
