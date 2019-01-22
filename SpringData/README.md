@@ -174,3 +174,33 @@ CRUD(创建、获取、更新、删除)、查询、排序和分页的相关的�
     [DataMongodbStart](mongodb/src/main/java/com/zjc/DataMongodbStart.java)
     
     先用`localhost:808/save`来保存数据，然后调用`localhost:8080\q1?name=zc`和`localhost:8080\q2=22`来测试查询功能
+    
+- Redis
+
+    Redis是一个基于键值对的开源内存数据存储，当然Redis也可以做数据缓存
+    
+    Spring对Redis的支持也是通过Spring Data Redis来实现的，Spring Data JPA为我们提供了连接相关的ConnectionFactory和数据
+    操作相关的RedisTemplate。在此特别指出，Spring Data Redis只对Redis2.6和2.8版本做过测试。
+    
+    根据Redis的不同的Java客户端，Spring Data Redis提供了如下的ConnectionFactory：
+    JedisConnectionFactory，JredisConnectionFactory，LettuceConnectionFactory，SrpConnectinFactory作为Redis的客户端。
+    
+    SpringDataRedis为我们提供了RedisTemplate和StringRedisTemplate两个模板来进行数据操作，其中，StringRedisTemplate只针对
+    键值都是字符型的数据进行操作。
+    
+    RedisTemplate和StringRedisTemplate都提供了如下的主要访问方法。
+    
+    ![模板方法](images/redis.jpg "模板方法")
+    
+    当我们的数据存储到Redis中时，键和值都是通过Spring的Serializer序列化到数据库的。RedisTemplate默认使用的是JdkSerializationRedisSerializer，
+    StringRedisTemplate默认使用的时StringRedisSerializer。
+    
+    Spring Data JPA为我们提供了下面的Serializer：GenericToStringSerializer、Jackson2JsonRedisSerializer、JacksonJsonRedisSerializer、
+    JdkSerializationRedisSerializer、OxmSerializer和StringRedisSerializer。
+    
+    - 实战
+    
+    [DataRedisStart](redis/src/main/java/com/zjc/DataRedisStart.java)
+    
+    通过`http://localhost:8080/set`来往redis中存储数据，通过`http://localhost:8080/getString`和`http://localhost:8080/getPerson`
+    来获取保存的数据
