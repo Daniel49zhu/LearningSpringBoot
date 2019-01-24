@@ -52,3 +52,45 @@
     [WebMvcConfig](security/src/main/java/com/zjc/config/WebMvcConfig.java)
     
     [WebSecurityConfig](security/src/main/java/com/zjc/config/WebSecurityConfig.java)
+    
+- 批处理Spring Batch
+
+    Spring Batch是用来处理大量数据操作的一个框架，主要用来读取大量数据，然后进行一定处理后输出成指定的形式。
+    
+    - Spring Batch的主要组成
+    
+    ![SpringBatch组成部分](images/batch.jpg "SpringBatch组成部分")
+    
+    如果要开启批处理还需要在配置类上使用@EnableBatchProcessing
+    
+    - Job监听
+    
+    如果需要监听我们的Job的执行情况，则定义一个类实现JobExecutionListener，并在定义Job 的Bean上绑定监听器。
+    
+    - 数据读取
+    
+    Spring Batch为我们提供了大量的ItemReader的实现，用来读取不同的数据来源
+    
+    - 数据处理及校验
+    
+    数据处理和校验都要通过ItemProcessor接口实现来完成，数据处理只需要ItemProcessor接口，重写其process方法。
+    方法输入的参数是从ItemReader读取到的数据，返回给ItemWriter。
+    
+    我们可以JSR-303的注解，来校验ItemReader读取到的数据是否满足需求。我们可以让我们的ItemProcessor实现ValidatingItemProcessor接口。
+    
+    - 数据输出
+    
+    Spring Batch为我们提供了大量的ItemWriter的实现，用来将数据输出到不同的目的地
+    
+    - 计划任务
+    
+    Spring Batch的任务是通过JobLauncher的run方法来执行的，因此我们只需在普通的计划任务方法中执行JobLauncher的run方法即可。
+    
+    - 参数后置绑定
+    
+    我们在ItemReader和ItemWriter的Bean定义的时候，参数已经硬编码在Bean的初始化中。
+    
+    - 实战
+    
+    [EnterpriseBatchStart](batch/src/main/java/com/zjc/EnterpriseBatchStart.java)
+    
