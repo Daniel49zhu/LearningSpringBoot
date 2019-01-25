@@ -142,3 +142,7 @@
     
     - 实战
     
+    [EnterpriseActivemqStart](activemq/src/main/java/com/zjc/EnterpriseActivemqStart.java)
+    
+   项目启动后控制台会显示已接收到信息
+    
