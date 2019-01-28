@@ -145,4 +145,63 @@
     [EnterpriseActivemqStart](activemq/src/main/java/com/zjc/EnterpriseActivemqStart.java)
     
    项目启动后控制台会显示已接收到信息
+   
+- 系统集成Spring Integration
+
+    - Spring Integration快速入门
     
+        Spring Integration提供了基于Spring的EIP（Enterprise Integration Patterns，企业集成模式）的实现。Spring Integration主要解决的
+        是不同系统之间的交互问题，通过异步消息驱动来达到系统交互时的松耦合。本节将基于无XML配置的原则使用Java配置、注解以及
+        Spring Integration Java DSL来使用Spring Integration。
+        
+        Spring Integration主要由Message、Channel和Message EndPoint组成。
+        
+        - Message
+        
+        Message是用来在不同部分之间传递的数据。Message由两部分组成：消息体（payload）与消息头（header）。消息体可以是
+        任何数据类型（如XML、JSON，Java对象）；消息头表示的元数据就是解释消息体的内容。
+        
+        - Channel
+        
+        在消息系统中，消息发送者发送消息到通道（Channel），消息接收者从通道（Channel）接收消息
+        
+        MessageChannel，是Spring Integration消息通道的顶级接口，PollableChannel具备轮询获得消息的功能，
+        SubscribableChannel发送消息给订阅了MessageHandler的订阅者
+        
+        常用的消息通道
+        
+        PublishSubscribeChannel允许广播消息给所有订阅者；QueueChannel云溪消息接收者轮询获得消息，用一个队列（queue）接收消息，
+        、队列的容量大小可以配置；PriorityChannel可按优先级将数据存储到堆；RenderzvousChannel确保每一个接收者
+        都接收到消息后再发送消息；DirectChannel是Spring Integration默认的消息通道，它允许将消息放松给一个订阅者，然后阻塞发送直到消息被接收；
+        ExeecutorChannel可以绑定一个多线程的task executor；
+        
+        通道拦截器
+        
+        Spring Integration给消息通道提供了通道拦截器（ChannelInterceptor），用来拦截发送和接收消息的操作。
+        
+        Message Endpoint
+        
+        消息端点（Message Endpoint）是真正处理消息（Message）的组件，它可以控制通道的路由。我们可用的消息端点包含如下：
+        Channel Adapter，通道适配器是一种连接外部系统或传输协议的端点（EndPoint），可以分为入站（inbound）和出战（outbound）。
+        通道适配器是单向的，入站通道适配器只支持接收消息，出战通道只支持输出消息；
+        
+        Gateway，消息网管类似Adapter，但是提供了双向的请求/返回集成方式，也分为入站（inbound）和出战（outbound）。Spring Integration
+        对相应的Adapter都提供了Gateway
+        
+        Service Adapter可以调用Spring的Bean来处理消息，并将处理后的结果输出到制定的消息通道
+        
+        Router，路由可以根据消息体类型（Payload Type Router）、消息头的值（Header Value Router）以及定义好的接收表作为提交，来决定
+        消息传递到的通道。
+        
+        Filter类似路由，不同的是过滤器不决定消息路由到哪里，而是决定消息路由可否传递给消息通道。
+        
+        Splitter，拆分器将消息拆分为几个部分单独处理，拆分器的返回值是一个集合或者数组。
+        
+        Aggregator，聚合器与拆分器相反，它接收一个java.util.List作为参数，将多个消息合并成一个消息
+        
+        Enricher，Transformer，Brider
+        
+        - 实战
+        
+        本章将演示读取https://spring.io/blog.atom的新闻聚合文件，atom是一个xml文件，且格式固定，我们将读取到的消息分类（Category
+        ）,将消息转到不同的消息通道，将分类为releases和engineering的消息写入磁盘文件，将分类为news的消息通过邮件发送。
