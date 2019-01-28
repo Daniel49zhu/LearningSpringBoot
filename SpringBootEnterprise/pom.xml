@@ -12,6 +12,7 @@
         <module>security</module>
         <module>batch</module>
         <module>activemq</module>
+        <module>integration</module>
     </modules>
 
 
